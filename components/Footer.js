@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.css";
 
 export const Footer = () => {
   return (
-    <>
+    <div>
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
@@ -16,6 +16,6 @@ export const Footer = () => {
           </span>
         </a>
       </footer>
-    </>
+    </div>
   );
 };
