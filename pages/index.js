@@ -1,7 +1,7 @@
-import { Main } from "../components/Main";
 import Head from "next/head";
-import { Footer } from "../components/Footer";
 import styles from "../styles/Home.module.css";
+import { Main } from "../components/Main";
+import { Footer } from "../components/Footer";
 
 export default function Home() {
   return (
