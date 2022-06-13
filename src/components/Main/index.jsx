@@ -1,5 +1,5 @@
-import { Headline } from "./Headline";
-import { Links } from "./Links";
+import { Headline } from "../Headline";
+import { Links } from "../Links";
 import classes from "./Main.module.css";
 
 export const Main = (props) => {
