@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import { Main } from "../components/Main";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
+import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
