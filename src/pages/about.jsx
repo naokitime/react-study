@@ -4,16 +4,7 @@ import { Main } from "../components/Main";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 
-export default function About({
-  doubleCount,
-  isShow,
-  hadleClick,
-  handleDisplay,
-  text,
-  array,
-  handleChange,
-  handleAdd,
-}) {
+const About = (props) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -22,20 +13,20 @@ export default function About({
       <Header />
 
       <div className={styles.body}>
-        {isShow ? <h1>{doubleCount}</h1> : null}
-        <button className={styles.button} onClick={hadleClick}>
+        {props.isShow ? <h1>{props.doubleCount}</h1> : null}
+        <button className={styles.button} onClick={props.hadleClick}>
           ボタン
         </button>
-        <button className={styles.button} onClick={handleDisplay}>
-          {isShow ? "表示" : "非表示"}
+        <button className={styles.button} onClick={props.handleDisplay}>
+          {props.isShow ? "表示" : "非表示"}
         </button>
-        
-        <input type="text" value={text} onChange={handleChange} />
-        <button className={styles.button} onClick={handleAdd}>
+
+        <input type="text" value={props.text} onChange={props.handleChange} />
+        <button className={styles.button} onClick={props.handleAdd}>
           追加
         </button>
         <ul>
-          {array.map((item) => {
+          {props.array.map((item) => {
             return <li key={item}>{item}</li>;
           })}
         </ul>
@@ -44,4 +35,5 @@ export default function About({
       <Footer />
     </div>
   );
-}
+};
+export default About;
