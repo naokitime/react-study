@@ -9,6 +9,7 @@ export default function Home() {
   const [count, setCount] = useState(1);
   const [text, setText] = useState("");
   const [isShow, setIsShow] = useState(true);
+  const [array, setArray] = useState([]);
 
   const hadleClick = useCallback(() => {
     if (count < 10) {
@@ -20,15 +21,25 @@ export default function Home() {
     setIsShow((prevIsShow) => !prevIsShow);
   }, []);
 
+  const handleChange = useCallback((e) => {
+    setText(e.target.value);
+  }, []);
+
+  const handleAdd = useCallback(() => {
+    setArray((prevArray) => {
+      if (prevArray.some((item) => item === text)) {
+        alert("同じ要素が既に存在します");
+        return prevArray;
+      }
+      return [...prevArray, text];
+    });
+  }, [text]);
+
   useEffect(() => {
     document.body.style.backgroundColor = "lightblue";
     return () => {
       document.body.style.backgroundColor = "";
     };
-  }, []);
-
-  const handleChange = useCallback((e) => {
-    setText(e.target.value);
   }, []);
 
   return (
@@ -45,6 +56,14 @@ export default function Home() {
         {isShow ? "表示" : "非表示"}
       </button>
       <input type="text" value={text} onChange={handleChange} />
+      <button className={styles.button} onClick={handleAdd}>
+        追加
+      </button>
+      <ul>
+        {array.map((item) => {
+          return <li key={item}>{item}</li>;
+        })}
+      </ul>
       <Main page="index" />
       <Footer />
     </div>
