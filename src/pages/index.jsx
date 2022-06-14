@@ -3,14 +3,18 @@ import styles from "../styles/Home.module.css";
 import { Main } from "../components/Main";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [count, setCount] = useState(1);
+
+  const hadleClick = (e) => {
+    setCount((count) => count + 1);
+  };
+
   useEffect(() => {
-    console.log("マウント時");
     document.body.style.backgroundColor = "lightblue";
     return () => {
-      console.log("アンマウント時");
       document.body.style.backgroundColor = "";
     };
   }, []);
@@ -21,7 +25,10 @@ export default function Home() {
         <title>Index Page</title>
       </Head>
       <Header />
-      <button className={styles.button}>ボタン</button>
+      <h1>{count}</h1>
+      <button className={styles.button} onClick={hadleClick}>
+        ボタン
+      </button>
       <Main page="index" />
       <Footer />
     </div>
