@@ -3,11 +3,15 @@ import styles from "../styles/Home.module.css";
 import { Main } from "../components/Main";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
-import { useCallback } from "react";
 
 export default function Home() {
-  const handleClick = useCallback((e) => {
-    console.log("1");
+  useEffect(() => {
+    console.log("マウント時");
+    document.body.style.backgroundColor = "lightblue";
+    return () => {
+      console.log("アンマウント時");
+      document.body.style.backgroundColor = "";
+    };
   }, []);
 
   return (
@@ -16,12 +20,7 @@ export default function Home() {
         <title>Index Page</title>
       </Head>
       <Header />
-      <a
-        // href="/about"
-        onClick={handleClick}
-      >
-        ボタン
-      </a>
+      <button className={styles.button}>ボタン</button>
       <Main page="index" />
       <Footer />
     </div>
