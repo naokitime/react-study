@@ -26,7 +26,6 @@ export const UserComponet = () => {
         </ul>
         <h2>投稿</h2>
         <PosPostsByUserIdts id={data.id} />
-        <h2>コメント</h2>
       </div>
     </div>
   );
