@@ -5,11 +5,10 @@ import { usePost } from "src/hooks/usePost";
 import { Post } from "src/components/Post";
 
 const PostsId = () => {
-
   return (
     <div className={styles.container}>
       <Header />
-      <Post/>
+      <Post />
     </div>
   );
 };
