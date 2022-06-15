@@ -1,8 +1,8 @@
-import { usePosts } from "src/hooks/usePosts";
 import Link from "next/link";
+import { useComments } from "src/hooks/useComments";
 
-export const Posts = () => {
-  const { data, error, isLoading, isEmpty } = usePosts();
+export const Comments = () => {
+  const { data, error, isLoading, isEmpty } = useComments();
 
   if (isLoading) {
     return <div>ローディング中</div>;
@@ -16,11 +16,11 @@ export const Posts = () => {
 
   return (
     <ol>
-      {data.map((post) => {
+      {data.map((comment) => {
         return (
-          <li key={post.id}>
-            <Link href={`/posts/${post.id}`}>
-              <a>{post.title}</a>
+          <li key={comment.id}>
+            <Link href={`/comments/${comment.id}`}>
+              <a>{`${comment.body}`}</a>
             </Link>
           </li>
         );
