@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { usePost } from "src/hooks/usePost";
 import { CommentsByPostId } from "../Comments/CommentsByPostsId";
 import { UserByUserId } from "../User/UserByUserId";

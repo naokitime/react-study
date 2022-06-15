@@ -1,11 +1,11 @@
 import { Header } from "../../components/Header";
-import { Comment } from "src/components/Comment";
+import { CommentComponent } from "src/components/Comment";
 
 const CommentsId = () => {
   return (
     <div>
       <Header />
-      <Comment />
+      <CommentComponent />
     </div>
   );
 };
