@@ -1,18 +1,18 @@
 import Head from "next/head";
 import styles from "../../styles/Home.module.css";
 import { Header } from "../../components/Header";
-import { Posts } from "../../components/Posts";
+import { Posts as PostsComponent } from "../../components/Posts";
 
-const Home = () => {
+const Posts = () => {
   return (
     <div className={styles.container}>
       <Head>
         <title>Index Page</title>
       </Head>
       <Header />
-      <Posts />
+      <PostsComponent />
     </div>
   );
 };
 
-export default Home;
+export default Posts;

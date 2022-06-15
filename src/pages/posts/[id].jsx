@@ -4,7 +4,7 @@ import { Header } from "../../components/Header";
 import { usePost } from "src/hooks/usePost";
 import { Post } from "src/components/Post";
 
-const PostId = () => {
+const PostsId = () => {
 
   return (
     <div className={styles.container}>
@@ -14,4 +14,4 @@ const PostId = () => {
   );
 };
 
-export default PostId;
+export default PostsId;
